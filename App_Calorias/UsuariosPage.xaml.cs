@@ -48,11 +48,11 @@ public partial class UsuariosPage : ContentPage
         await Navigation.PushAsync(new CrearUsuarioPage());
     }
 
-    private async void OnEditarClicked(object sender, EventArgs e)
+    private async void OnEditarClicked(object sender, EventArgs e)ego el fly
     {
         if (sender is Button button && button.BindingContext is UsuarioSimple usuario)
         {
-            await Navigation.PushAsync(new EditarUsuarioPage());
+            await Navigation.PushAsync(new EditarUsuarioPage(usuario));
         }
     }
 

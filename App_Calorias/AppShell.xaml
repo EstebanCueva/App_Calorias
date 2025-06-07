@@ -6,10 +6,22 @@
     xmlns:local="clr-namespace:App_Calorias"
     Shell.FlyoutBehavior="Flyout"
     Title="App_Calorias">
-
-    <ShellContent
+    <FlyoutItem>
+        <ShellContent
         Title="Home"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
+
+
+        <ShellContent
+    Title="Crear Usuario"
+    ContentTemplate="{DataTemplate local:CrearUsuarioPage}"
+    Route="CrearUsuarioPage" />
+        <ShellContent
+    Title="Usuario"
+    ContentTemplate="{DataTemplate local:UsuariosPage}"
+    Route="UsuarioPage" />
+
+    </FlyoutItem>
 
 </Shell>
