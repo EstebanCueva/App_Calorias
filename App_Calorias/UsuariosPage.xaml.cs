@@ -52,7 +52,7 @@ public partial class UsuariosPage : ContentPage
     {
         if (sender is Button button && button.BindingContext is UsuarioSimple usuario)
         {
-            await Navigation.PushAsync(new EditarUsuarioPage(usuario));
+            await Navigation.PushAsync(new EditarUsuarioPage());
         }
     }
 
