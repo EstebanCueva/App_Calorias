@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App_Calorias.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="30">
+
+            <Image Source="ia1.png"
+           Aspect="AspectFill"
+           HeightRequest="250"
+           HorizontalOptions="Center"
+           VerticalOptions="Center" />
+
+
+            <Button Text="Calcular Mis Calorías"
+                FontSize="18"
+                CornerRadius="10"
+                BackgroundColor="#007bff"
+                TextColor="White"
+                HeightRequest="50"
+                Clicked="OnCalcularCaloriasClicked"/>
+
+            <Frame CornerRadius="15" HasShadow="True">
+                <HorizontalStackLayout Spacing="10">
+                    <Image Source="saludable.jpg"
+                       WidthRequest="100"
+                       HeightRequest="100"
+                       Aspect="AspectFill"/>
+                    <VerticalStackLayout>
+                        <Label Text="Importancia de una Dieta Saludable"
+                           FontAttributes="Bold"
+                           FontSize="16"/>
+                        <Label Text="Mantener una dieta balanceada ayuda a controlar el peso, prevenir enfermedades y mejorar tu bienestar general."
+                           FontSize="14"/>
+                    </VerticalStackLayout>
+                </HorizontalStackLayout>
+            </Frame>
+
+            <Frame CornerRadius="15" HasShadow="True">
+                <HorizontalStackLayout Spacing="10">
+                    <Image Source="run.png"
+                       WidthRequest="100"
+                       HeightRequest="100"
+                       Aspect="AspectFill"/>
+                    <VerticalStackLayout>
+                        <Label Text="Beneficios del Ejercicio Regular"
+                           FontAttributes="Bold"
+                           FontSize="16"/>
+                        <Label Text="El ejercicio fortalece el corazón, mejora la circulación, aumenta la energía y reduce el estrés."
+                           FontSize="14"/>
+                    </VerticalStackLayout>
+                </HorizontalStackLayout>
+            </Frame>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

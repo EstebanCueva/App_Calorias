@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App_Calorias.CrearUsuarioPage"
+             Title="Crear Usuario">
+
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="10">
+            <Entry x:Name="nameEntry" Placeholder="Nombre" />
+            <Entry x:Name="ageEntry" Placeholder="Edad" Keyboard="Numeric" />
+            <Entry x:Name="descriptionEntry" Placeholder="Descripción" />
+            <Entry x:Name="activityEntry" Placeholder="Actividad" />
+            <Entry x:Name="sexEntry" Placeholder="Sexo" />
+            <Entry x:Name="weightEntry" Placeholder="Peso" Keyboard="Numeric" />
+            <Entry x:Name="heightEntry" Placeholder="Altura" Keyboard="Numeric" />
+            <Entry x:Name="idDietaEntry" Placeholder="ID Dieta" Keyboard="Numeric" />
+
+            <Button Text="Guardar" Clicked="OnGuardarClicked" BackgroundColor="Green" TextColor="White"/>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
