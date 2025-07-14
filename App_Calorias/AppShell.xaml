@@ -12,15 +12,14 @@
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
 
-
         <ShellContent
-    Title="Crear Usuario"
-    ContentTemplate="{DataTemplate local:CrearUsuarioPage}"
-    Route="CrearUsuarioPage" />
-        <ShellContent
-    Title="Usuario"
-    ContentTemplate="{DataTemplate local:UsuariosPage}"
-    Route="UsuarioPage" />
+        Title="Crear Usuario"
+        ContentTemplate="{DataTemplate local:CrearUsuarioPageNEW}"
+        Route="CrearUsuarioPage" />
+            <ShellContent
+        Title="Usuario"
+        ContentTemplate="{DataTemplate local:UsuariosPage}"
+        Route="UsuarioPage" />
 
     </FlyoutItem>
 

@@ -1,4 +1,6 @@
-﻿namespace App_Calorias
+﻿using App_Calorias.Views;
+
+namespace App_Calorias
 {
     public partial class MainPage : ContentPage
     {

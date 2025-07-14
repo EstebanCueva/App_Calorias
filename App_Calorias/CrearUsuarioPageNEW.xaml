@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:App_Calorias.ViewModels"
+             x:Class="App_Calorias.CrearUsuarioPageNEW"
+             Title="Crear Usuario">
+
+    <ContentPage.BindingContext>
+        <vm:UsuarioViewModel />
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="10">
+
+            <Label Text="ID Usuario" />
+            <Entry Placeholder="Ej. 101" Text="{Binding Usuario.Id}" />
+
+            <Label Text="Nombre" />
+            <Entry Placeholder="Ej. Juan Pérez" Text="{Binding Usuario.Name}" />
+
+            <Label Text="Edad" />
+            <Entry Placeholder="Ej. 30" Keyboard="Numeric" Text="{Binding Usuario.Age}" />
+
+            <Label Text="Descripción" />
+            <Entry Placeholder="Ej. Usuario activo" Text="{Binding Usuario.Description}" />
+
+            <Picker Title="Selecciona actividad" SelectedItem="{Binding Usuario.Activity}">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Baja</x:String>
+                        <x:String>Media</x:String>
+                        <x:String>Alta</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Picker Title="Selecciona sexo" SelectedItem="{Binding Usuario.Sex}">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Masculino</x:String>
+                        <x:String>Femenino</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Label Text="Peso (kg)" />
+            <Entry Placeholder="Ej. 70" Keyboard="Numeric" Text="{Binding Usuario.Weight}" />
+
+            <Label Text="Altura (cm)" />
+            <Entry Placeholder="Ej. 170" Keyboard="Numeric" Text="{Binding Usuario.Height}" />
+
+            <Label Text="ID de Dieta" />
+            <Entry Placeholder="Ej. 1" Keyboard="Numeric" Text="{Binding Usuario.IdDieta}" />
+
+            <Button Text="Crear Usuario"
+                    Command="{Binding CrearUsuarioCommand}"
+                    BackgroundColor="Green"
+                    TextColor="White" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
