@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="App_Calorias.CrearDietaPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:App_Calorias.ViewModels"
+    Title="Crear Dieta">
+
+
+    <ContentPage.BindingContext>
+        <vm:DietaViewModel />
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="10">
+
+            <Label Text="Nombre de la Dieta" />
+            <Entry Placeholder="Ej. Dieta baja en carbohidratos" Text="{Binding Dieta.NameDiet}" />
+
+            <Label Text="Descripción" />
+            <Editor Placeholder="Descripción detallada" AutoSize="TextChanges" HeightRequest="100"
+                    Text="{Binding Dieta.DescriptionDiet}" />
+
+            <Label Text="Calorías" />
+            <Entry Placeholder="Ej. 2000" Keyboard="Numeric" Text="{Binding Dieta.Calories}" />
+
+            <Label Text="Proteínas" />
+            <Entry Placeholder="Ej. 150" Keyboard="Numeric" Text="{Binding Dieta.Proteins}" />
+
+            <Label Text="Carbohidratos" />
+            <Entry Placeholder="Ej. 100" Keyboard="Numeric" Text="{Binding Dieta.Carbohydrates}" />
+
+            <Label Text="Tipo de dieta" />
+            <Entry Placeholder="Ej. Keto, Vegana, Mediterránea" Text="{Binding Dieta.DietType}" />
+
+            <Button Text="Crear Dieta"
+                    Command="{Binding CrearDietaCommand}"
+                    BackgroundColor="Green"
+                    TextColor="White" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

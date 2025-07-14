@@ -42,7 +42,7 @@ public class UsuariosViewModel : INotifyPropertyChanged
         {
             Usuarios.Clear();
 
-            var lista = await _httpClient.GetFromJsonAsync<List<UsuarioSimple>>("https://localhost:7118/api/testdb");
+            var lista = await _httpClient.GetFromJsonAsync<List<UsuarioSimple>>("https://localhost:7118/api/Testdb");
 
             if (lista != null)
             {
@@ -80,7 +80,7 @@ public class UsuariosViewModel : INotifyPropertyChanged
 
         try
         {
-            var response = await _httpClient.DeleteAsync($"https://localhost:7118/api/testdb/{usuario.Id}");
+            var response = await _httpClient.DeleteAsync($"https://localhost:7118/api/Testdb/{usuario.Id}");
             if (response.IsSuccessStatusCode)
             {
                 Usuarios.Remove(usuario);

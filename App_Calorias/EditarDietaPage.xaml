@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="App_Calorias.EditarDietaPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:App_Calorias.ViewModels"
+    Title="Editar Dieta">
+
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="10">
+
+            <Entry Placeholder="Nombre de la Dieta" Text="{Binding Dieta.NameDiet}" />
+
+            <Editor Placeholder="Descripción" AutoSize="TextChanges" HeightRequest="100"
+                    Text="{Binding Dieta.DescriptionDiet}" />
+
+            <Entry Placeholder="Calorías" Keyboard="Numeric" Text="{Binding Dieta.Calories}" />
+
+            <Entry Placeholder="Proteínas" Keyboard="Numeric" Text="{Binding Dieta.Proteins}" />
+
+            <Entry Placeholder="Carbohidratos" Keyboard="Numeric" Text="{Binding Dieta.Carbohydrates}" />
+
+            <Entry Placeholder="Tipo de Dieta" Text="{Binding Dieta.DietType}" />
+
+            <Button Text="Actualizar"
+                    Command="{Binding ActualizarCommand}"
+                    BackgroundColor="Orange"
+                    TextColor="White" />
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

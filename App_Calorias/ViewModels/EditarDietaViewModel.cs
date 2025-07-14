@@ -6,19 +6,19 @@ using App_Calorias.Models;
 
 namespace App_Calorias.ViewModels;
 
-public class EditarUsuarioViewModel : INotifyPropertyChanged
+public class EditarDietaViewModel : INotifyPropertyChanged
 {
     public event PropertyChangedEventHandler PropertyChanged;
 
     private readonly HttpClient _httpClient = new();
 
-    public UsuarioSimple Usuario { get; set; }
+    public Dieta Dieta { get; set; }
 
     public ICommand ActualizarCommand { get; }
 
-    public EditarUsuarioViewModel(UsuarioSimple usuario)
+    public EditarDietaViewModel(Dieta dieta)
     {
-        Usuario = usuario;
+        Dieta = dieta;
         ActualizarCommand = new Command(async () => await Actualizar());
     }
 
@@ -27,16 +27,16 @@ public class EditarUsuarioViewModel : INotifyPropertyChanged
         try
         {
             var response = await _httpClient.PutAsJsonAsync(
-                $"https://localhost:7118/api/Testdb/{Usuario.Id}", Usuario);
+                $"https://localhost:7118/api/DietasApi/{Dieta.Id}", Dieta);
 
             if (response.IsSuccessStatusCode)
             {
-                await Application.Current.MainPage.DisplayAlert("Éxito", "Usuario actualizado", "OK");
+                await Application.Current.MainPage.DisplayAlert("Éxito", "Dieta actualizada", "OK");
                 await Shell.Current.Navigation.PopAsync();
             }
             else
             {
-                await Application.Current.MainPage.DisplayAlert("Error", "No se pudo actualizar", "OK");
+                await Application.Current.MainPage.DisplayAlert("Error", "No se pudo actualizar la dieta", "OK");
             }
         }
         catch (Exception ex)
@@ -48,3 +48,4 @@ public class EditarUsuarioViewModel : INotifyPropertyChanged
     void OnPropertyChanged([CallerMemberName] string name = null)
         => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
 }
+
